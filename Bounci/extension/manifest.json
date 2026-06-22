@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Bounci - AI Compliance Monitor",
+  "version": "1.0.0",
+  "description": "Benny the Bouncer monitors your AI usage for compliance. Captures prompts from ChatGPT, Claude, Gemini, and Copilot.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*",
+    "https://copilot.microsoft.com/*",
+    "https://api.bounciai.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*",
+        "https://gemini.google.com/*",
+        "https://copilot.microsoft.com/*"
+      ],
+      "js": ["sniffer.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "popup.html"
+  },
+  "action": {
+    "default_title": "Open Bounci Dashboard",
+    "default_icon": {
+      "16": "Benny.png",
+      "48": "Benny.png",
+      "128": "Benny.png"
+    }
+  },
+  "icons": {
+    "16": "Benny.png",
+    "48": "Benny.png",
+    "128": "Benny.png"
+  }
+}
