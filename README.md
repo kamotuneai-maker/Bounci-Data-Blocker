@@ -16,8 +16,8 @@ Chrome Extension  ──captures prompts──▶  Backend API  ──serves dat
 ## Setup
 
 Each component has its own dependencies and run instructions — see:
-- [`extension/README.md`](./extension/README.md)
-- [`backend/README.md`](./backend/README.md)
+- /extension/README.md
+- /backend/README.md
 - `dashboard/` — `npm install && npm run dev` (Vite dev server)
 
 To run the full stack locally: start `backend/` first (needs a `DATABASE_URL`), point the dashboard's API base URL at it, then load `extension/` as an unpacked extension in Chrome (`chrome://extensions` → Developer mode → Load unpacked).
